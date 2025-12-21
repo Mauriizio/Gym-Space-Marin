@@ -1,12 +1,14 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Geist, Geist_Mono, Orbitron, Rajdhani } from "next/font/google"
 import "./globals.css"
 
 
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-display", weight: ["400", "500", "600", "700", "800"] })
+const rajdhani = Rajdhani({ subsets: ["latin"], variable: "--font-body", weight: ["400", "500", "600", "700"] })
 
 export const metadata: Metadata = {
   title: "Space Marine Gym & Club de Boxeo | Puente Alto",
@@ -34,8 +36,8 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#000000" />
       </head>
-      <body className={`font-sans antialiased`}>
-        {children}       
+      <body className={`${orbitron.variable} ${rajdhani.variable} font-sans antialiased`}>
+        {children}     
       </body>
     </html>
   )

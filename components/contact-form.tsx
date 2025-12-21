@@ -13,6 +13,7 @@ export function ContactForm() {
   const [formData, setFormData] = useState({
     nombre: "",
     telefono: "",
+     servicio: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
@@ -25,18 +26,21 @@ export function ContactForm() {
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
     // Abrir WhatsApp con los datos del formulario
-    const message = `Hola, soy ${formData.nombre}. Mi teléfono es ${formData.telefono}. Quiero más información sobre Space Marine Gym.`
+    const message = `Hola, soy ${formData.nombre}. Mi teléfono es ${formData.telefono}. Me interesa el servicio: ${formData.servicio || "No especificado"}. Quiero más información sobre Space Marine Gym.`
     window.open(`https://wa.me/56990758022?text=${encodeURIComponent(message)}`, "_blank")
 
     setIsSubmitting(false)
     setSubmitted(true)
-    setFormData({ nombre: "", telefono: "" })
+    setFormData({ nombre: "", telefono: "", servicio: "" })
 
     setTimeout(() => setSubmitted(false), 3000)
   }
 
   return (
-    <section id="contacto" className="py-20">
+    <section
+      id="contacto"
+      className="py-20 bg-gradient-to-b from-secondary/20 via-background to-secondary/20"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -82,6 +86,29 @@ export function ContactForm() {
                   className="bg-secondary border-border text-foreground placeholder:text-muted-foreground"
                 />
               </div>
+             <div className="space-y-2">
+                <Label htmlFor="servicio" className="text-foreground">
+                  Servicio de interés
+                </Label>
+                <select
+                  id="servicio"
+                  value={formData.servicio}
+                  onChange={(e) => setFormData({ ...formData, servicio: e.target.value })}
+                  className="w-full rounded-md border border-border bg-secondary text-foreground px-3 py-3 focus:outline-none focus:ring-2 focus:ring-primary"
+                  required
+                >
+                  <option value="" disabled>
+                    Selecciona un servicio
+                  </option>
+                  <option>Gym Mensual</option>
+                  <option>Gym Semestral</option>
+                  <option>Gym Anual</option>
+                  <option>Club de Boxeo</option>
+                  <option>Combo Completo</option>
+                  <option>Personal Trainer</option>
+                </select>
+              </div>
+
               <Button
                 type="submit"
                 className="w-full bg-primary text-primary-foreground hover:bg-primary/90"

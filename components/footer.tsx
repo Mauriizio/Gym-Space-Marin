@@ -4,8 +4,12 @@ import { Phone, Mail, MapPin, Instagram, Facebook, CreditCard } from "lucide-rea
 
 export function Footer() {
   return (
-    <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-4 py-12">
+    <footer className="relative bg-card border-t border-border overflow-hidden">
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <Image src="/images/image.png" alt="Space Marine Logo" fill className="object-contain" />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/90" />
+      <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Logo y descripción */}
           <div className="flex flex-col items-center md:items-start">
@@ -109,6 +113,15 @@ export function Footer() {
               >
                 <Facebook className="w-5 h-5 text-primary" />
               </a>
+              <a
+                href="mailto:spacemarinegym@gmail.com"
+                className="p-2 rounded-full bg-secondary hover:bg-primary/20 transition-colors"
+                aria-label="Correo"
+              >
+                <Mail className="w-5 h-5 text-primary" />
+              </a>
+
+
             </div>
             <p className="text-muted-foreground text-sm text-center">
               © {new Date().getFullYear()} Space Marine Gym & Club de Boxeo. Todos los derechos reservados.

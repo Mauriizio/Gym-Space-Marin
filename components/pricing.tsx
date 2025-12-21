@@ -88,7 +88,10 @@ export function Pricing() {
   ]
 
   return (
-    <section id="precios" className="py-20">
+    <section
+      id="precios"
+      className="py-20 bg-gradient-to-b from-secondary/25 via-background to-secondary/20"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -105,7 +108,7 @@ export function Pricing() {
 
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-center text-foreground mb-8">Membresía Gimnasio</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {plans.map((plan, index) => (
               <Card
                 key={index}
@@ -143,10 +146,10 @@ export function Pricing() {
                     ))}
                   </ul>
                   <Button
-                    className={`w-full mt-auto ${
+                     className={`w-full mt-auto border ${
                       plan.popular
-                        ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                        : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                        ? "bg-primary text-primary-foreground hover:bg-primary/90 border-primary"
+                        : "bg-secondary/80 text-foreground border-primary/20 hover:bg-secondary/90"
                     }`}
                     asChild
                   >

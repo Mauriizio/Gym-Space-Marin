@@ -1,6 +1,3 @@
-import { Play } from "lucide-react"
-import { Button } from "@/components/ui/button"
-
 export function VideoSection() {
   return (
     <section className="py-20 bg-secondary/30">
@@ -12,28 +9,16 @@ export function VideoSection() {
           <p className="text-muted-foreground max-w-2xl mx-auto">Descubre el ambiente de entrenamiento que te espera</p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+         <div className="max-w-5xl mx-auto">
           <div className="relative aspect-video rounded-xl overflow-hidden bg-card border border-border">
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{
-                backgroundImage: "url('/epic-gym-training-video-thumbnail-with-boxing-and-.jpg')",
-              }}
+            <video
+              src="/galeria/vid.mp4"
+              controls
+              preload="metadata"
+              className="w-full h-full object-cover"
+              poster="/galeria/box 11.png"
             />
-            <div className="absolute inset-0 bg-background/60 flex items-center justify-center">
-              <Button
-                size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full w-20 h-20 p-0"
-                aria-label="Reproducir video"
-              >
-                <Play className="w-10 h-10 ml-1" />
-              </Button>
-            </div>
-            <div className="absolute bottom-4 left-4 right-4 text-center">
-              <p className="text-foreground text-sm md:text-base">
-                Video próximamente - ¡Visítanos para vivir la experiencia!
-              </p>
-            </div>
+             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
           </div>
         </div>
       </div>

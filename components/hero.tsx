@@ -32,15 +32,17 @@ export function Hero() {
             />
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-            <span className="text-primary">SPACE MARINE</span> GYM
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 font-display">
+            Club de Boxeo <span className="text-primary">Space Marine</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-4">Gimnasio • Club de Boxeo</p>
+          <p className="text-lg md:text-xl text-muted-foreground mb-4">
+            Boxeo de alto rendimiento • Gimnasio completo
+          </p>
 
           <p className="text-base md:text-lg text-foreground/80 max-w-2xl mb-8">
-            Transforma tu cuerpo y mente con nosotros. Entrenamiento de alta intensidad, boxeo profesional y la mejor
-            comunidad fitness de Puente Alto.
+             Vive la experiencia de un club de boxeo enfocado en técnica y disciplina, con el respaldo de un gym
+            equipado para fortalecer tu desempeño y tu físico.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">

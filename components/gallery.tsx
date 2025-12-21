@@ -29,13 +29,13 @@ export function Gallery() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {images.map((image, index) => (
             <Dialog key={index}>
               <DialogTrigger asChild>
                 <button
                   type="button"
-                  className="group relative overflow-hidden rounded-xl bg-muted/40 shadow-sm min-h-[320px] sm:min-h-[380px] lg:min-h-[460px]"
+                   className="group relative overflow-hidden rounded-xl bg-muted/40 shadow-sm min-h-[340px] sm:min-h-[420px] lg:min-h-[480px]"
                   aria-label={`Ver ${image.alt}`}
                 >
                   <Image
@@ -49,17 +49,17 @@ export function Gallery() {
                   <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors" />
                 </button>
               </DialogTrigger>
-              <DialogContent className="max-w-5xl">
+              <DialogContent className="max-w-5xl w-[95vw] sm:w-full p-4 sm:p-6">
                 <DialogHeader>
                   <DialogTitle>{image.alt}</DialogTitle>
                 </DialogHeader>
-                <div className="relative w-full h-[70vh]">
+                <div className="relative w-full h-[65vh] sm:h-[70vh]">
                   <Image
                     src={image.src || "/placeholder.svg"}
                     alt={image.alt}
                     fill
                     sizes="100vw"
-                    className="object-cover rounded-md bg-black/80"
+                   className="object-contain rounded-md bg-black"
                   />
                 </div>
               </DialogContent>

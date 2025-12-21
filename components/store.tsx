@@ -7,22 +7,26 @@ export function Store() {
       icon: Droplets,
       title: "Bebestibles",
       description: "Agua, bebidas energizantes y más para mantenerte hidratado durante tu entrenamiento.",
+      background: "url('/galeria/box 3.png')",
     },
     {
       icon: FlaskConical,
       title: "Dosis de Suplementos",
       description:
         "Proteína, Pre-entreno y Creatina en dosis individuales. Ideal para probar o entrenamientos puntuales.",
+         background: "url('/galeria/box 1.png')",
     },
     {
       icon: Package,
       title: "Potes Completos",
       description: "Adquiere tus suplementos favoritos en presentación completa: Proteína, Pre-entreno y Creatina.",
+      background: "url('/galeria/box 9.png')",
     },
     {
       icon: Zap,
       title: "Energizantes",
       description: "Bebidas energéticas para potenciar tu rendimiento y mantener la energía al máximo.",
+       background: "url('/galeria/box 6.png')",
     },
   ]
 
@@ -42,15 +46,20 @@ export function Store() {
           {products.map((product, index) => (
             <Card
               key={index}
-              className="bg-card border-border hover:border-primary/50 transition-colors group text-center"
+              className="relative overflow-hidden bg-card border-border hover:border-primary/50 transition-colors group text-center"
             >
-              <CardHeader>
+              <div
+                className="absolute inset-0 bg-cover bg-center opacity-30 group-hover:opacity-40 transition-opacity"
+                style={{ backgroundImage: product.background }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/70 to-background/85" />
+              <CardHeader className="relative z-10">
                 <div className="mx-auto mb-4 p-4 rounded-full bg-primary/10 w-fit group-hover:bg-primary/20 transition-colors">
                   <product.icon className="w-8 h-8 text-primary" />
                 </div>
                 <CardTitle className="text-lg text-foreground">{product.title}</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="relative z-10">
                 <CardDescription className="text-muted-foreground text-sm">{product.description}</CardDescription>
               </CardContent>
             </Card>

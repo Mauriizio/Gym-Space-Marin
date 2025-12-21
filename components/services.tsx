@@ -1,4 +1,4 @@
-import { Dumbbell, Swords, Award, Building } from "lucide-react"
+import { Dumbbell, Swords, Award, Building, UserRoundCheck } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
@@ -16,10 +16,19 @@ export function Services() {
       description:
         "Aprende las técnicas del noble arte del boxeo con Felipe Sáez, entrenador certificado en México por el INAF (Instituto Internacional de Acondicionamiento Físico y Nutrición Deportiva).",
     },
+    {
+      icon: UserRoundCheck,
+      title: "Personal Trainer",
+      description:
+        "Planes personalizados para esculpir tu físico, mejorar tu condición y acompañarte paso a paso hacia tus objetivos individuales.",
+    },
   ]
 
   return (
-    <section id="servicios" className="py-20 bg-secondary/30">
+    <section
+      id="servicios"
+      className="py-20 bg-gradient-to-b from-secondary/30 via-background/60 to-secondary/20"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -37,6 +46,10 @@ export function Services() {
             <Badge className="bg-primary/20 text-primary border-primary/30 px-4 py-2 text-sm">
               <Building className="w-4 h-4 mr-2" />
               Inscrito en Municipalidad de Puente Alto
+            </Badge>
+             <Badge className="bg-primary/20 text-primary border-primary/30 px-4 py-2 text-sm">
+              <Swords className="w-4 h-4 mr-2" />
+              Atletas que compiten a nivel nacional
             </Badge>
           </div>
         </div>
