@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react"
 
 export function Hero() {
   return (
-   <section className="relative min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)] flex items-center justify-center pt-20 md:pt-24 pb-20 overflow-hidden">
+   <section className="relative min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)] flex items-center justify-center py-12 md:py-16 lg:py-20 overflow-hidden">
       <div className="absolute inset-0">
         <Image
           src="/galeria/box 9.png"
@@ -21,13 +21,13 @@ export function Hero() {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-2">
-          <div className="mb-8 animate-pulse">
+           <div className="mb-6 md:mb-8 animate-pulse">
             <Image
               src="/images/image.png"
               alt="Space Marine Gym Logo"
               width={300}
               height={300}
-              className="w-48 h-48 md:w-72 md:h-72 lg:w-80 lg:h-80 object-contain drop-shadow-[0_0_30px_rgba(212,168,75,0.3)]"
+                className="w-40 h-40 md:w-64 md:h-64 lg:w-72 lg:h-72 object-contain drop-shadow-[0_0_30px_rgba(212,168,75,0.3)]"
               priority
             />
           </div>
@@ -40,12 +40,12 @@ export function Hero() {
             Boxeo de alto rendimiento • Gimnasio completo
           </p>
 
-          <p className="text-base md:text-lg text-foreground/80 max-w-2xl mb-10">
-             Vive la experiencia de un club de boxeo enfocado en técnica y disciplina, con el respaldo de un gym
+          <p className="text-base md:text-lg text-foreground/80 max-w-2xl mb-8 md:mb-10">
+            Vive la experiencia de un club de boxeo enfocado en técnica y disciplina, con el respaldo de un gym
             equipado para fortalecer tu desempeño y tu físico.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 pb-6">
+          <div className="flex flex-col sm:flex-row gap-4 pb-4 md:pb-6">
             <Button
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6"
