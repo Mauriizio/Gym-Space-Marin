@@ -20,7 +20,7 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-2">
           <div className="mb-8 animate-pulse">
             <Image
               src="/images/image.png"
