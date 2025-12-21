@@ -5,7 +5,7 @@ import { Phone, Mail, MapPin, Instagram, Facebook, CreditCard } from "lucide-rea
 export function Footer() {
   return (
     <footer className="relative bg-card border-t border-border overflow-hidden">
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
         <Image src="/images/image.png" alt="Space Marine Logo" fill className="object-contain" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/90" />
