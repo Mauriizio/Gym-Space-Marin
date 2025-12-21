@@ -27,9 +27,9 @@ export function Services() {
   return (
     <section
       id="servicios"
-      className="py-20 bg-gradient-to-b from-secondary/30 via-background/60 to-secondary/20"
+     className="py-16 md:py-20 bg-gradient-to-b from-secondary/30 via-background/60 to-secondary/20 min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)] flex items-center"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 w-full">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Nuestros <span className="text-primary">Servicios</span>
@@ -54,7 +54,7 @@ export function Services() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <Card key={index} className="bg-card border-border hover:border-primary/50 transition-colors group">
               <CardHeader className="text-center">
