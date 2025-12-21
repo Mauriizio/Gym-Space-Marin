@@ -90,10 +90,10 @@ export function Pricing() {
   return (
     <section
       id="precios"
-      className="py-20 bg-gradient-to-b from-secondary/25 via-background to-secondary/20"
+        className="py-16 md:py-20 bg-gradient-to-b from-secondary/25 via-background to-secondary/20 min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)]"
     >
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+      <div className="container mx-auto px-4 w-full">
+        <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Nuestros <span className="text-primary">Planes</span>
           </h2>
@@ -106,7 +106,7 @@ export function Pricing() {
           </div>
         </div>
 
-        <div className="mb-16">
+       <div className="mb-12">
           <h3 className="text-2xl font-bold text-center text-foreground mb-8">Membresía Gimnasio</h3>
              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {plans.map((plan, index) => (
