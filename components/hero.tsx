@@ -33,7 +33,7 @@ export function Hero() {
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 font-display">
-            Club de Boxeo <span className="text-primary">Space Marine</span>
+            Club de Boxeo <br></br><span className="text-primary">Space Marine</span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground mb-4">
