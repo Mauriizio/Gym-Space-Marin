@@ -40,12 +40,12 @@ export function Hero() {
             Boxeo de alto rendimiento • Gimnasio completo
           </p>
 
-          <p className="text-base md:text-lg text-foreground/80 max-w-2xl mb-8">
+          <p className="text-base md:text-lg text-foreground/80 max-w-2xl mb-10">
              Vive la experiencia de un club de boxeo enfocado en técnica y disciplina, con el respaldo de un gym
             equipado para fortalecer tu desempeño y tu físico.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 pb-6">
             <Button
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6"
