@@ -4,8 +4,20 @@ import { ChevronDown } from "lucide-react"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 md:pt-20">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-secondary via-background to-background" />
+    <section className="relative min-h-screen flex items-center justify-center pt-16 md:pt-20 overflow-hidden">
+      <div className="absolute inset-0">
+        <Image
+          src="/galeria/box 9.png"
+          alt="Entrenamiento en Space Marine Gym"
+          fill
+          priority
+          quality={90}
+          className="object-cover object-top"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/75 via-background/60 to-background/90" />
+        <div className="absolute inset-0 bg-gradient-radial from-background/30 via-transparent to-transparent" />
+      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">

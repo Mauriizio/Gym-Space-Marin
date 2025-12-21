@@ -1,13 +1,20 @@
 import Image from "next/image"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
 export function Gallery() {
   const images = [
-    { src: "/modern-gym-interior-with-weights-and-equipment.jpg", alt: "Interior del gimnasio" },
-    { src: "/boxing-ring-with-punching-bags-in-gym.jpg", alt: "Área de boxeo" },
-    { src: "/kickboxing-training-class-in-gym.jpg", alt: "Clase de kickboxing" },
-    { src: "/gym-equipment-dumbbells-and-machines.jpg", alt: "Equipamiento" },
-    { src: "/personal-trainer-helping-client-in-gym.jpg", alt: "Entrenamiento personal" },
-    { src: "/group-fitness-class-in-modern-gym.jpg", alt: "Clases grupales" },
+    { src: "/galeria/box 1.png", alt: "Entrenamiento 1" },
+    { src: "/galeria/box 11.png", alt: "Club de Box" },
+    { src: "/galeria/box 8.png", alt: "Clases grupales" },
+    { src: "/galeria/box 6.png", alt: "Entrenamiento 2" },
+    { src: "/galeria/box 3.png", alt: "Entrenamiento personal" },
+    { src: "/galeria/box 10.png", alt: "Entrenamiento 3" },
   ]
 
   return (
@@ -22,17 +29,41 @@ export function Gallery() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {images.map((image, index) => (
-            <div key={index} className="relative aspect-video overflow-hidden rounded-lg group">
-              <Image
-                src={image.src || "/placeholder.svg"}
-                alt={image.alt}
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors" />
-            </div>
+            <Dialog key={index}>
+              <DialogTrigger asChild>
+                <button
+                  type="button"
+                  className="group relative overflow-hidden rounded-xl bg-muted/40 shadow-sm min-h-[320px] sm:min-h-[380px] lg:min-h-[460px]"
+                  aria-label={`Ver ${image.alt}`}
+                >
+                  <Image
+                    src={image.src || "/placeholder.svg"}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover h-full w-full transition-transform duration-300 group-hover:scale-105"
+                    priority={index < 3}
+                  />
+                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors" />
+                </button>
+              </DialogTrigger>
+              <DialogContent className="max-w-5xl">
+                <DialogHeader>
+                  <DialogTitle>{image.alt}</DialogTitle>
+                </DialogHeader>
+                <div className="relative w-full h-[70vh]">
+                  <Image
+                    src={image.src || "/placeholder.svg"}
+                    alt={image.alt}
+                    fill
+                    sizes="100vw"
+                    className="object-cover rounded-md bg-black/80"
+                  />
+                </div>
+              </DialogContent>
+            </Dialog>
           ))}
         </div>
       </div>
