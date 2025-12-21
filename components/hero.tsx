@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 md:pt-20 overflow-hidden">
+   <section className="relative min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)] flex items-center justify-center pt-20 md:pt-24 pb-20 overflow-hidden">
       <div className="absolute inset-0">
         <Image
           src="/galeria/box 9.png"
