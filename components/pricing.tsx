@@ -105,11 +105,11 @@ export function Pricing() {
 
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-center text-foreground mb-8">Membresía Gimnasio</h3>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {plans.map((plan, index) => (
               <Card
                 key={index}
-                className={`bg-card relative overflow-hidden ${
+                className={`bg-card relative overflow-hidden h-full flex flex-col  ${
                   plan.popular ? "border-primary border-2" : "border-border"
                 }`}
               >
@@ -123,7 +123,7 @@ export function Pricing() {
                     {plan.savings}
                   </Badge>
                 )}
-                <CardHeader className="text-center pt-8">
+                <CardHeader className="text-center pt-8 flex flex-col gap-2">
                   <CardTitle className="text-xl text-foreground">{plan.name}</CardTitle>
                   <CardDescription className="text-muted-foreground">{plan.description}</CardDescription>
                   <div className="mt-4">
@@ -131,8 +131,8 @@ export function Pricing() {
                     <span className="text-muted-foreground text-sm"> CLP{plan.period}</span>
                   </div>
                 </CardHeader>
-                <CardContent className="pb-6">
-                  <ul className="space-y-2 mb-6">
+                <CardContent className="pb-6 flex flex-col flex-1">
+                  <ul className="space-y-2 mb-6 flex-1">
                     {plan.benefits.map((benefit, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm">
                         <div className="flex-shrink-0 w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center">
@@ -143,7 +143,7 @@ export function Pricing() {
                     ))}
                   </ul>
                   <Button
-                    className={`w-full ${
+                    className={`w-full mt-auto ${
                       plan.popular
                         ? "bg-primary text-primary-foreground hover:bg-primary/90"
                         : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
@@ -166,11 +166,11 @@ export function Pricing() {
 
         <div>
           <h3 className="text-2xl font-bold text-center text-foreground mb-8">Club de Boxeo & Combos</h3>
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {boxingPlans.map((plan, index) => (
               <Card
                 key={index}
-                className={`bg-card relative overflow-hidden ${
+                className={`bg-card relative overflow-hidden h-full flex flex-col ${
                   plan.popular ? "border-primary border-2" : "border-border"
                 }`}
               >
@@ -179,7 +179,7 @@ export function Pricing() {
                     MEJOR VALOR
                   </div>
                 )}
-                <CardHeader className="text-center pt-8">
+                 <CardHeader className="text-center pt-8 flex flex-col gap-2">
                   <CardTitle className="text-xl text-foreground">{plan.name}</CardTitle>
                   <CardDescription className="text-muted-foreground">{plan.description}</CardDescription>
                   <div className="mt-4">
@@ -187,8 +187,8 @@ export function Pricing() {
                     <span className="text-muted-foreground text-sm"> CLP{plan.period}</span>
                   </div>
                 </CardHeader>
-                <CardContent className="pb-6">
-                  <ul className="space-y-2 mb-6">
+    <CardContent className="pb-6 flex flex-col flex-1">
+                  <ul className="space-y-2 mb-6 flex-1">
                     {plan.benefits.map((benefit, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm">
                         <div className="flex-shrink-0 w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center">
@@ -198,7 +198,7 @@ export function Pricing() {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+                 <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 mt-auto" asChild>
                     <a
                       href={`https://wa.me/56990758022?text=${plan.whatsappMessage}`}
                       target="_blank"

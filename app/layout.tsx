@@ -1,7 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
+
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -12,7 +12,6 @@ export const metadata: Metadata = {
   description:
     "Space Marine Gym y Club de Boxeo en Puente Alto. Entrenamiento de gimnasio y boxeo profesional con Felipe Sáez, certificado INAF. Aprobado por IND. Mensualidad $25.000 CLP. Aceptamos tarjetas.",
   keywords: "gimnasio, gym, boxeo, club de boxeo, artes marciales, puente alto, space marine, IND, INAF",
-    generator: 'v0.app'
 }
 
 export const viewport = {
@@ -27,8 +26,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`font-sans antialiased`}>
-        {children}
-        <Analytics />
+        {children}       
       </body>
     </html>
   )
