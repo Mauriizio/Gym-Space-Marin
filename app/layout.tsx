@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Orbitron, Rajdhani } from "next/font/google"
+import { ScrollToTopOnLoad } from "@/components/scroll-to-top"
 import "./globals.css"
 
 
@@ -37,6 +38,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#000000" />
       </head>
       <body className={`${orbitron.variable} ${rajdhani.variable} font-sans antialiased`}>
+        <ScrollToTopOnLoad />
         {children}     
       </body>
     </html>

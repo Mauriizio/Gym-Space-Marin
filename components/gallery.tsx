@@ -110,11 +110,11 @@ function GalleryRow({ title, description, images }: GalleryRowProps) {
                     <div className="absolute inset-0 bg-primary/0 transition-colors group-hover:bg-primary/10" />
                   </button>
                 </DialogTrigger>
-                <DialogContent className="flex h-[calc(100vh-2rem)] w-[calc(100vw-2rem)] max-w-none flex-col rounded-2xl bg-black/95 p-4 sm:p-6">
+                <DialogContent className="flex h-[calc(100vh-2rem)] w-[calc(100vw-2rem)] max-w-none flex-col rounded-2xl bg-black/95 p-4 sm:p-6 md:w-[80vw] md:max-w-[80vw] lg:w-[75vw] lg:max-w-[75vw]">
                   <DialogHeader className="sr-only">
                     <DialogTitle>{image.alt}</DialogTitle>
                   </DialogHeader>
-                  <div className="relative h-full w-full flex-1">
+                  <div className="relative flex h-full w-full flex-1 items-center justify-center">
                     <Image
                       src={image.src || "/placeholder.svg"}
                       alt={image.alt}
