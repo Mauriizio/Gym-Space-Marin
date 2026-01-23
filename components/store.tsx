@@ -13,12 +13,12 @@ export function Store() {
   const [creatineIndex, setCreatineIndex] = useState(0)
   const creatineImages = [
     {
-      src: "/images/creatina-frontal.jpg",
+      src: "/images/creatina-frontal.png",
       alt: "Creatina Monohidrato Space Marin - Vista frontal",
       label: "Vista frontal",
     },
     {
-      src: "/images/creatina-trasera.jpg",
+      src: "/images/creatina-trasera.png",
       alt: "Creatina Monohidrato Space Marin - Vista posterior",
       label: "Vista posterior",
     },
