@@ -1,10 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-
-import { useIsMobile } from "@/hooks/use-mobile"
 
 import {
   Dialog,
@@ -26,9 +24,10 @@ type GalleryRowProps = {
 }
 
 function GalleryRow({ title, description, images }: GalleryRowProps) {
-  const isMobile = useIsMobile()
-  const itemsPerView = isMobile ? 1 : 3
+  const [itemsPerView, setItemsPerView] = useState(3)
   const [startIndex, setStartIndex] = useState(0)
+  const lastWheelRef = useRef(0)
+  const wheelDeltaRef = useRef(0)
 
   const visibleImageIndexes = useMemo(
     () =>
@@ -37,6 +36,16 @@ function GalleryRow({ title, description, images }: GalleryRowProps) {
       ),
     [images, itemsPerView, startIndex]
   )
+
+  useEffect(() => {
+    const mql = window.matchMedia("(min-width: 768px)")
+    const updateItemsPerView = () => {
+      setItemsPerView(mql.matches ? 3 : 1)
+    }
+    updateItemsPerView()
+    mql.addEventListener("change", updateItemsPerView)
+    return () => mql.removeEventListener("change", updateItemsPerView)
+  }, [])
 
   useEffect(() => {
     setStartIndex(0)
@@ -54,6 +63,23 @@ function GalleryRow({ title, description, images }: GalleryRowProps) {
     setStartIndex((prev) => (prev + 1) % images.length)
   }
 
+  const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
+    if (!canNavigate) return
+    const { deltaX, deltaY } = event
+    if (Math.abs(deltaX) <= Math.abs(deltaY)) return
+    wheelDeltaRef.current += deltaX
+    if (Math.abs(wheelDeltaRef.current) < 120) return
+    const now = Date.now()
+    if (now - lastWheelRef.current < 500) return
+    lastWheelRef.current = now
+    if (wheelDeltaRef.current > 0) {
+      handleNext()
+    } else {
+      handlePrevious()
+    }
+    wheelDeltaRef.current = 0
+  }
+
   return (
     <div className="space-y-4">
       <div className="space-y-1">
@@ -61,7 +87,7 @@ function GalleryRow({ title, description, images }: GalleryRowProps) {
         <p className="text-muted-foreground">{description}</p>
       </div>
 
-      <div className="relative">
+      <div className="relative" onWheel={handleWheel}>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {visibleImageIndexes.map((imageIndex) => {
             const image = images[imageIndex]
@@ -84,17 +110,17 @@ function GalleryRow({ title, description, images }: GalleryRowProps) {
                     <div className="absolute inset-0 bg-primary/0 transition-colors group-hover:bg-primary/10" />
                   </button>
                 </DialogTrigger>
-                <DialogContent className="w-[95vw] max-w-5xl p-4 sm:p-6">
-                  <DialogHeader>
+                <DialogContent className="flex h-[calc(100vh-2rem)] w-[calc(100vw-2rem)] max-w-none flex-col rounded-2xl bg-black/95 p-4 sm:p-6">
+                  <DialogHeader className="sr-only">
                     <DialogTitle>{image.alt}</DialogTitle>
                   </DialogHeader>
-                  <div className="relative h-[65vh] w-full sm:h-[70vh]">
+                  <div className="relative h-full w-full flex-1">
                     <Image
                       src={image.src || "/placeholder.svg"}
                       alt={image.alt}
                       fill
                       sizes="100vw"
-                      className="rounded-md bg-black object-contain"
+                      className="object-contain"
                     />
                   </div>
                 </DialogContent>
