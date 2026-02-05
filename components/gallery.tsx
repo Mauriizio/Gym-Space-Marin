@@ -174,15 +174,15 @@ export function Gallery() {
     { src: "/peleas/pelea5.png", alt: "Pelea reciente 5" },
     { src: "/peleas/pelea6.png", alt: "Pelea reciente 6" },
     { src: "/peleas/pelea7.png", alt: "Pelea reciente 7" },
-    { src: "/peleas/pelea8.png", alt: "Pelea reciente 8" },
   ]
 
   const gymImages: GalleryImage[] = [
-    { src: "/gym/gym1.png", alt: "Zona de pesas" },
-    { src: "/gym/gym2.png", alt: "Área de ring" },
-    { src: "/gym/gym3.png", alt: "Área de sacos" },
+    { src: "/gym/gym1.png", alt: "Areas Gym" },
+    { src: "/gym/gym2.png", alt: "Área de sacos" },
+    { src: "/gym/gym3.png", alt: "Área de cardio" },
     { src: "/gym/gym4.png", alt: "Zona de pesas" },
-    { src: "/gym/gym5.png", alt: "Área de sacos" },
+    { src: "/gym/gym5.png", alt: "Área de poleas" },
+    { src: "/gym/gym6.png", alt: "Área de Practicas" },
   ]
 
   return (
