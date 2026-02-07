@@ -1,6 +1,19 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Phone, Mail, MapPin, Instagram, Facebook, CreditCard } from "lucide-react"
+import { Phone, Mail, MapPin, Instagram, CreditCard } from "lucide-react"
+
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className={className}
+      fill="currentColor"
+    >
+      <path d="M16.1 3c.6 2.6 2.6 4.7 5.2 5.2v3.1c-2 0-3.8-.6-5.2-1.6v6.3c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.5 0 1 .1 1.4.2v3.2c-.4-.2-.9-.3-1.4-.3-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3V3h3z" />
+    </svg>
+  )
+}
 
 export function Footer() {
   return (
@@ -96,7 +109,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/space_marine_gym?utm_source=qr&igsh=dTNlY2h5cGRwcDQ%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-secondary hover:bg-primary/20 transition-colors"
@@ -105,13 +118,13 @@ export function Footer() {
                 <Instagram className="w-5 h-5 text-primary" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.tiktok.com/@space_marine_gym?is_from_webapp=1&sender_device=pc"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-secondary hover:bg-primary/20 transition-colors"
-                aria-label="Facebook"
+                aria-label="TikTok"
               >
-                <Facebook className="w-5 h-5 text-primary" />
+                <TikTokIcon className="w-5 h-5 text-primary" />
               </a>
               <a
                 href="mailto:spacemarinegym@gmail.com"
@@ -124,7 +137,17 @@ export function Footer() {
 
             </div>
             <p className="text-muted-foreground text-sm text-center">
-              © {new Date().getFullYear()} Space Marine Gym & Club de Boxeo. Todos los derechos reservados.
+              © {new Date().getFullYear()} Space Marine Gym & Club de Boxeo. Todos los derechos reservados. Web
+              hecha por{" "}
+              <a
+                href="https://maurizio.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                maurizio.dev
+              </a>
+              .
             </p>
           </div>
         </div>
