@@ -136,25 +136,10 @@ export function Footer() {
 
 
             </div>
-<<<<<<< ours
-            <p className="text-muted-foreground text-sm text-center">
-              © {new Date().getFullYear()} Space Marine Gym & Club de Boxeo. Todos los derechos reservados. Web
-              hecha por{" "}
-              <a
-                href="https://maurizio.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                maurizio.dev
-              </a>
-              .
-            </p>
-=======
             <div className="text-muted-foreground text-sm text-center flex flex-col gap-1">
-              <p>© {new Date().getFullYear()} Space Marine Gym & Club de Boxeo.</p>
+              <p>© {new Date().getFullYear()} Space Marine Gym & Club de Boxeo. Todos los derechos reservados.</p>
               <p>
-                Web hecha por{" "}
+                Web hecha por{' '}
                 <a
                   href="https://maurizio.dev/"
                   target="_blank"
@@ -166,7 +151,6 @@ export function Footer() {
                 .
               </p>
             </div>
->>>>>>> theirs
           </div>
         </div>
       </div>
