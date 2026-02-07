@@ -19,7 +19,7 @@ export function Footer() {
   return (
     <footer className="relative bg-card border-t border-border overflow-hidden">
       <div className="absolute inset-0 opacity-25 pointer-events-none">
-        <Image src="/images/image.png" alt="Space Marine Logo" fill className="object-contain" />
+        <Image src="/images/image.png" alt="" fill className="object-contain" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/90" />
       <div className="container mx-auto px-4 pt-12 pb-24 relative z-10">

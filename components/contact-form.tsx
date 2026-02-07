@@ -98,8 +98,8 @@ export function ContactForm() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-foreground">
-                  Correo electrónico
+                <Label htmlFor="telefono" className="text-foreground">
+                  Teléfono
                 </Label>
                 <Input
                   id="telefono"
@@ -109,6 +109,7 @@ export function ContactForm() {
                   value={formData.telefono}
                   onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
                   required
+                  autoComplete="tel"
                   className="bg-secondary border-border text-foreground placeholder:text-muted-foreground"
                 />
               </div>
