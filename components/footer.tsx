@@ -18,14 +18,14 @@ function TikTokIcon({ className }: { className?: string }) {
 export function Footer() {
   return (
     <footer className="relative bg-card border-t border-border overflow-hidden">
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
+      <div className="absolute inset-0 opacity-25 pointer-events-none">
         <Image src="/images/image.png" alt="Space Marine Logo" fill className="object-contain" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/90" />
       <div className="container mx-auto px-4 pt-12 pb-24 relative z-10">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Logo y descripción */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <div className="flex items-center gap-3 mb-4">
               <Image
                 src="/images/image.png"
@@ -36,23 +36,23 @@ export function Footer() {
               />
               <span className="text-primary font-bold text-xl">SPACE MARINE</span>
             </div>
-            <p className="text-muted-foreground text-center md:text-left text-sm mb-3">
+            <p className="text-muted-foreground text-sm mb-3 max-w-xs text-balance mx-auto md:mx-0">
               Tu gimnasio de confianza en Puente Alto. Gimnasio y Club de Boxeo.
             </p>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground justify-center md:justify-start">
               <CreditCard className="w-4 h-4 text-primary" />
               <span>Tarjetas de crédito y débito</span>
             </div>
           </div>
 
           {/* Información de contacto */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left w-full max-w-xs mx-auto md:mx-0">
             <h3 className="text-foreground font-semibold text-lg mb-4">Contacto</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 w-full">
               <li>
                 <a
                   href="tel:+56990758022"
-                  className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+                  className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors justify-center md:justify-start"
                 >
                   <Phone className="w-5 h-5 text-primary" />
                   <span>+569 9075 8022</span>
@@ -61,7 +61,7 @@ export function Footer() {
               <li>
                 <a
                   href="mailto:spacemarinegym@gmail.com"
-                  className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+                  className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors justify-center md:justify-start"
                 >
                   <Mail className="w-5 h-5 text-primary" />
                   <span>spacemarinegym@gmail.com</span>
@@ -72,7 +72,7 @@ export function Footer() {
                   href="https://maps.google.com/?q=Sargento+Menadier+1458+Puente+Alto"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+                  className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors justify-center md:justify-start"
                 >
                   <MapPin className="w-5 h-5 text-primary" />
                   <span>Sargento Menadier 1458, Puente Alto</span>
@@ -82,9 +82,9 @@ export function Footer() {
           </div>
 
           {/* Enlaces rápidos */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left w-full max-w-xs mx-auto md:mx-0">
             <h3 className="text-foreground font-semibold text-lg mb-4">Enlaces</h3>
-            <nav className="flex flex-col gap-2">
+            <nav className="flex flex-col gap-2 w-full items-center md:items-start">
               <Link href="#servicios" className="text-muted-foreground hover:text-primary transition-colors">
                 Servicios
               </Link>
@@ -136,8 +136,9 @@ export function Footer() {
 
 
             </div>
-            <div className="text-muted-foreground text-sm text-center flex flex-col gap-1">
-              <p>© {new Date().getFullYear()} Space Marine Gym & Club de Boxeo. Todos los derechos reservados.</p>
+            <div className="text-muted-foreground text-sm text-center flex flex-col gap-1 max-w-xs text-balance">
+              <p>© {new Date().getFullYear()} Space Marine Gym & Club de Boxeo.</p>
+              <p>Todos los derechos reservados.</p>
               <p>
                 Web hecha por{' '}
                 <a
