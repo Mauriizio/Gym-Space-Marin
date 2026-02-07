@@ -22,7 +22,7 @@ export function Footer() {
         <Image src="/images/image.png" alt="Space Marine Logo" fill className="object-contain" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/90" />
-      <div className="container mx-auto px-4 py-12 relative z-10">
+      <div className="container mx-auto px-4 pt-12 pb-24 relative z-10">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Logo y descripción */}
           <div className="flex flex-col items-center md:items-start">
@@ -106,7 +106,7 @@ export function Footer() {
 
         {/* Redes sociales y copyright */}
         <div className="border-t border-border mt-8 pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col items-center gap-4">
             <div className="flex items-center gap-4">
               <a
                 href="https://www.instagram.com/space_marine_gym?utm_source=qr&igsh=dTNlY2h5cGRwcDQ%3D"
@@ -136,6 +136,7 @@ export function Footer() {
 
 
             </div>
+<<<<<<< ours
             <p className="text-muted-foreground text-sm text-center">
               © {new Date().getFullYear()} Space Marine Gym & Club de Boxeo. Todos los derechos reservados. Web
               hecha por{" "}
@@ -149,6 +150,23 @@ export function Footer() {
               </a>
               .
             </p>
+=======
+            <div className="text-muted-foreground text-sm text-center flex flex-col gap-1">
+              <p>© {new Date().getFullYear()} Space Marine Gym & Club de Boxeo.</p>
+              <p>
+                Web hecha por{" "}
+                <a
+                  href="https://maurizio.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  maurizio.dev
+                </a>
+                .
+              </p>
+            </div>
+>>>>>>> theirs
           </div>
         </div>
       </div>
