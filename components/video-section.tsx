@@ -9,8 +9,8 @@ export function VideoSection() {
           <p className="text-muted-foreground max-w-2xl mx-auto">Descubre el ambiente de entrenamiento que te espera</p>
         </div>
 
-        <div className="w-full mx-auto">
-          <div className="relative aspect-video rounded-2xl overflow-hidden bg-card border border-border max-h-[75vh] shadow-lg lift-on-hover">
+         <div className="mx-auto flex w-full justify-center">
+          <div className="relative aspect-video w-full max-w-4xl rounded-2xl overflow-hidden bg-card border border-border max-h-[75vh] shadow-lg lift-on-hover">
             <video
               src="/galeria/vid.mp4"
               controls
